@@ -47,7 +47,7 @@ podTemplate(label: 'mypod',
                 DEPLOYMENT=`kubectl --namespace=\${NAMESPACE} get deployments -l app=web,tier=frontend,version=v1 -o name`
 
                 kubectl --namespace=\${NAMESPACE} get \${DEPLOYMENT}
-                Kubectl get pods
+                kubectl get pods
                 if [ \${?} -ne "0" ]; then
                     # No deployment to update
                     echo 'No deployment to update'
